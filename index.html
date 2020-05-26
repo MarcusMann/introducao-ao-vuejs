@@ -18,7 +18,7 @@
 
   <div id="app">
     <div>
-      {{ message }}
+      {{ message | letrasMaiusculas }}
     </div>
     <div v-if="user.admin">
       <botao />
@@ -73,6 +73,11 @@
             message: "Comprar um sorvete na barraca do seu João."
           }
         ]
+      },
+      filters: {
+        letrasMaiusculas: function(value) {
+          return value.toUpperCase()
+        }
       },
       methods: {
         adicionarValor: function() {

@@ -26,6 +26,13 @@
     <div v-else>
       <p class="red">Está opção é somente para administrador do site.</p>
     </div>
+    <div>
+      <ol>
+        <li v-for="tweet in tweets" v-bind:key="tweet.id">
+          {{ tweet.message }}
+        </li>
+      </ol>
+    </div>
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -42,7 +49,21 @@
         user: {
           name: "Marcus Pereira",
           admin: false
-        }
+        },
+        tweets: [
+          {
+            id: 1,
+            message: "Hora do recreio!"
+          },
+          {
+            id: 2,
+            message: "Hora de ir dormir!"
+          },
+          {
+            id: 3,
+            message: "Comprar um sorvete na barraca do seu João."
+          }
+        ]
       }
     })
   </script>

@@ -4,21 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spacedevs</title>
+  <style>
+    .btn-red {
+      background-color: red;
+      color: white;
+    }
+  </style>
 </head>
 <body>
 
   <div id="app">
     {{ message }}
-    
-    <button v-on:click="message='Valor alterado com sucesso'">Alterar a Mensagem</button>
+    <botao />
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script>
+    Vue.component('botao', {
+      template: "<button>Meu Botao</button>"
+    })
+
     new Vue({
       el: "#app",
       data: {
-        message: "Bem-vindo ao canal da Spacedevs no Youtube :)"
+        message: "Bem-vindo ao canal da Spacedevs no Youtube :)" // Getter e um Setter
       }
     })
   </script>

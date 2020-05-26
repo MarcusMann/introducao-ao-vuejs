@@ -9,13 +9,23 @@
       background-color: red;
       color: white;
     }
+    .red {
+      color: red;
+    }
   </style>
 </head>
 <body>
 
   <div id="app">
-    {{ message }}
-    <botao />
+    <div>
+      {{ message }}
+    </div>
+    <div v-if="user.admin">
+      <botao />
+    </div>
+    <div v-else>
+      <p class="red">Está opção é somente para administrador do site.</p>
+    </div>
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -27,7 +37,12 @@
     new Vue({
       el: "#app",
       data: {
-        message: "Bem-vindo ao canal da Spacedevs no Youtube :)" // Getter e um Setter
+        message: "Bem-vindo ao canal da Spacedevs no Youtube :)", // Getter e um Setter
+        check: false,
+        user: {
+          name: "Marcus Pereira",
+          admin: false
+        }
       }
     })
   </script>

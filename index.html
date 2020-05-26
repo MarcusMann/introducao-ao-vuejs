@@ -37,6 +37,10 @@
       <input type="text" v-model="user.name">
       {{ user.name }}
     </div>
+    <div>
+      <button v-on:click="adicionarValor">Mostrar Valor</button>
+      {{ defaultValue }}
+    </div>
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -49,6 +53,7 @@
       el: "#app",
       data: {
         message: "Bem-vindo ao canal da Spacedevs no Youtube :)", // Getter e um Setter
+        defaultValue: "",
         check: false,
         user: {
           name: "Marcus Pereira",
@@ -68,6 +73,11 @@
             message: "Comprar um sorvete na barraca do seu João."
           }
         ]
+      },
+      methods: {
+        adicionarValor: function() {
+          this.defaultValue = "Valor padrão da minha aplicação."
+        }
       }
     })
   </script>
